@@ -1,0 +1,40 @@
+Practical No. 1 :-
+Create a simple Knowledge Base using facts, predicates, clauses, and goals (Student-Course Database)
+
+Prolog code:-
+
+symptom(ravi, fever).
+symptom(ravi, cough).
+symptom(ravi, fatigue).
+symptom(amit, sneezing).
+symptom(amit, itchy_eyes).
+symptom(sita, fever).
+symptom(sita, cough).
+symptom(sita, breathing_difficulty).
+
+disease(Person, flu) :-
+    symptom(Person, fever),
+    symptom(Person, cough),
+    symptom(Person, fatigue).
+disease(Person, common_cold) :-
+    symptom(Person, cough),
+    symptom(Person, sneezing),
+    symptom(Person, sore_throat).
+disease(Person, allergy) :-
+    symptom(Person, sneezing),
+    symptom(Person, itchy_eyes).
+
+disease(Person, possible_pneumonia) :-
+    symptom(Person, fever),
+    symptom(Person, cough),
+    symptom(Person, breathing_difficulty).
+
+
+
+Output Query:-
+1.) disease(ravi, Disease).
+2.) disease(amit, Disease).
+
+Output:-
+1.) Disease = flu
+2.) Disease = allergy
