@@ -1,2 +1,38 @@
 Practical 3 :-
 Write a Prolog program to perform list manipulation operations (appending two lists, reversing a list, and searching for an element).
+
+Prolog code:-
+% Append two lists
+my_append([], L, L).
+
+my_append([H|T], L, [H|R]) :-
+    my_append(T, L, R).
+
+% Reverse a list
+my_reverse([], []).
+
+my_reverse([H|T], R) :-
+    my_reverse(T, RT),
+    my_append(RT, [H], R).
+
+% Search for an element
+my_member(X, [X|_]).
+
+my_member(X, [_|T]) :-
+    my_member(X, T).
+
+% Find the length of a list
+my_length([], 0).
+
+my_length([_|T], N) :-
+    my_length(T, N1),
+    N is N1 + 1.
+
+
+Output Query:-
+1.) my_append([1,2,3], [4,5], Result).
+2.) my_member(3, [1,2,3,4]).
+
+Output:-
+1.) Result = [1, 2, 3, 4, 5].
+2.) true.
