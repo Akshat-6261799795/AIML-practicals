@@ -1,0 +1,42 @@
+Practical 6 :-
+Implement   Breadth-First Search (BFS) to find the shortest path in a graph
+
+Prolog Code:-
+edge(a,b).
+edge(a,c).
+edge(b,d).
+edge(b,e).
+edge(c,f).
+edge(e,g).
+
+h(b,4).
+h(c,5).
+h(d,3).
+h(e,2).
+h(f,1).
+h(g,0).
+
+best_first(Start,Goal) :-
+    search([Start],Goal).
+
+search([Goal|_],Goal) :-
+    write(Goal).
+
+search([Node|_],Goal) :-
+    write(Node), write(' -> '),
+    find_best(Node,Next),
+    search([Next],Goal).
+
+find_best(Node,Next) :-
+    edge(Node,Next),h(Next,H),
+    \+ (edge(Node,Other), h(Other,H2), H2 < H).
+
+%best_first(a,g)
+
+Output Query:-
+1.) best_first(a, d).
+2.) best_first(a, e).
+
+Output :-
+1.) a -> b -> d
+2.) a -> b -> e
