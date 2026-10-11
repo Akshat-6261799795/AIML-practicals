@@ -1,0 +1,34 @@
+Practical 4 :-
+Develop a timetable database and answer queries regarding faculty, subjects, and classrooms
+
+
+Prolog Code:-
+% College timetable facts
+
+timetable(monday, java, rahul, room101).
+timetable(monday, maths, amit, room102).
+timetable(tuesday, python, priya, room103).
+timetable(tuesday, java, rahul, room101).
+timetable(wednesday, dbms, amit, room102).
+timetable(thursday, python, priya, room103).
+timetable(friday, maths, amit, room102).
+
+% Find subjects taught by a faculty
+faculty_subject(Faculty, Subject) :-
+    timetable(_, Subject, Faculty, _).
+
+% Find classroom of a subject
+subject_room(Subject, Room) :-
+    timetable(_, Subject, _, Room).
+
+% Find faculty teaching a subject
+subject_faculty(Subject, Faculty) :-
+    timetable(_, Subject, Faculty, _).
+
+% Find timetable for a particular day
+day_timetable(Day, Subject, Faculty, Room) :-
+    timetable(Day, Subject, Faculty, Room).
+
+
+
+hjh
