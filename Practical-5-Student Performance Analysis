@@ -1,0 +1,33 @@
+Practical 5 :-
+Classify students as topper, average, and fail using rule-based reasoning
+
+Prolog Code:-
+% Student marks
+marks(rahul, 90).
+marks(amit, 65).
+marks(priya, 30).
+marks(sita, 85).
+marks(rohan, 45).
+
+% Rules for student performance
+result(Student, topper) :-
+    marks(Student, Marks),
+    Marks >= 80.
+
+result(Student, average) :-
+    marks(Student, Marks),
+    Marks >= 40,
+    Marks < 80.
+
+result(Student, fail) :-
+    marks(Student, Marks),
+    Marks < 40.
+
+
+Output Query:-
+1.) result(amit, Result).
+2.) result(priya, Result).
+
+Output:-
+1.) Result = average.
+2.) Result = fail.
