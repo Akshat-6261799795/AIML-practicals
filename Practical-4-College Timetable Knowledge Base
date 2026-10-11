@@ -29,6 +29,10 @@ subject_faculty(Subject, Faculty) :-
 day_timetable(Day, Subject, Faculty, Room) :-
     timetable(Day, Subject, Faculty, Room).
 
+Output Query:-
+1.) subject_room(python, Room).
+2.) subject_faculty(maths, Faculty).
 
-
-hjh
+Output:-
+1.) Room = room103.
+2.) Faculty = amit.
