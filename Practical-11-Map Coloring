@@ -21,8 +21,8 @@ map(A,B,C,D) :-
     different(C,D).
 
 Output Query:-
-1.) ?- map(A, B, C, D).
-2.) ?- map(red, red, blue, green).
+1.) map(A, B, C, D).
+2.) map(red, red, blue, green).
 
 Output:-
 1.) A = red,
