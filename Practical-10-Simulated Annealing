@@ -25,7 +25,6 @@ step(X,T,Best) :-
     T1 is T-1,
     step(Next,T1,Best).
 
-%anneal(1,Best).
 
 Output Query:-
 1.) anneal(2, Best).
