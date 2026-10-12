@@ -1,0 +1,32 @@
+Practical 11 :-
+Represent a Map-Coloring problem as a CSP and solve it using backtracking search
+
+Prolog Code:-
+color(red).
+color(green).
+color(blue).
+
+different(X,Y) :- X \= Y.
+
+map(A,B,C,D) :-
+    color(A),
+    color(B),
+    color(C),
+    color(D),
+
+    different(A,B),
+    different(A,C),
+    different(B,C),
+    different(B,D),
+    different(C,D).
+
+Output Query:-
+1.) ?- map(A, B, C, D).
+2.) ?- map(red, red, blue, green).
+
+Output:-
+1.) A = red,
+    B = green,
+    C = blue,
+    D = red.
+2.) false.
