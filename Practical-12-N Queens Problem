@@ -1,0 +1,39 @@
+Practical 12 :-
+Solve   the N-Queens problem using backtracking to satisfy CSP constraints
+
+Prolog Code:-
+% Check if a queen placement is safe
+safe(_, []).
+
+safe(Q, [H|T]) :-
+    Q =\= H,
+    abs(Q-H) =\= 1,
+    safe(Q, T).
+
+% Solve the N-Queens problem
+queens(0, []).
+
+queens(N, [Q|Rest]) :-
+    N > 0,
+    N1 is N-1,
+    queens(N1, Rest),
+    between(1, 4, Q),
+    safe(Q, Rest),
+    check_diagonal(Q, Rest, 1).
+
+% Check diagonal positions
+check_diagonal(_, [], _).
+
+check_diagonal(Q, [H|T], D) :-
+    abs(Q-H) =\= D,
+    D1 is D+1,
+    check_diagonal(Q, T, D1).
+
+
+Output Query:-
+1.) queens(4, Solution).
+2.) queens(4, _).
+
+Output:-
+1.) Solution = [2, 4, 1, 3].
+2.) true.
