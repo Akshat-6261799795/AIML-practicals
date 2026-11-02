@@ -25,7 +25,8 @@ elif interest == "web development" or interest == "4":
 else:
     print("Sorry, no course recommendation available.")
 
-# Output
+# Output:-
+
 # Welcome to Course Advisory System
 # Choose your interest:
 # 1. Artificial Intelligence
